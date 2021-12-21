@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f3f5fa;
+    /* #f3ecec; */
+    animation: pageLoad 1.25s;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+#portfolio {
+    height: 6rem;
+}
+
+.portfolio {
+    margin: 0 3em;
+}
+
+.portfolio-title {
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    color: #161831;
+}
+
+.portfolio-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    border-bottom: 4px solid #35b729;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.portfolio-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10rem;
+    border-bottom: 1px solid #dedede;
+    left: 50%;
+    top: 104%;
+    transform: translateX(-50%);
+}
+
+.portfolio-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 3rem;
+    margin: 2em 2em;
+}
+
+.portfolio-content img {
+    height: 20em;
+    width: 30em;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.our-portfolio {
+    position: relative;
+    margin: 3em 1em;
+}
+
+.our-portfolio:hover .portfolio-description {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+    cursor: url(hover-cursor.svg), auto;
+}
+
+.our-portfolio:hover img {
+    opacity: 0.8;
+    cursor: url(hover-cursor.svg), auto;
+}
+
+.portfolio-description {
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    background: rgba(22, 24, 49, 0.8);
+    color: white;
+    height: 5em;
+    width: 20em;
+    top: auto;
+    left: 0;
+    font-weight: 500;
+    transform: perspective(400px) rotateX(90deg);
+    transform-origin: center center 0;
+    transition: all 0.5s ease 0s;
+}
+
+.portfolio-description h5 {
+    font-size: 1em;
+}
+
+.portfolio-description h6 {
+    font-size: 0.75em;
+}
+
+.portfolio-image {
+    width: 20em;
+    border: 2px solid #161831;
+}
+
+#trio-teachers {
+    height: 15em;
+}
+
+#i2TECHS-logo {
+    height: 9em;
+}
+
+#ravikiran-infotech {
+    height: 9em;
+}
+
+#people-skillz {
+    height: 7em;
+}
+
+#nisha-sanjeev {
+    height: 9em;
+}
+
+@media (max-width: 992px) {
+    .portfolio-content {
+        flex-wrap: wrap-reverse;
+    }
+    .portfolio-content img {
+        height: 15em;
+        width: 25em;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        margin: 10px 5px;
+    }
+    .portfolio-title {
+        margin-bottom: 1.5rem;
+        font-size: 2em;
+    }
+    .portfolio-title::after {
+        width: 2.5rem;
+    }
+    .portfolio-title::before {
+        width: 6.5rem;
+    }
+    .portfolio-content {
+        font-size: 0.8em;
+        margin-bottom: 1rem;
+    }
+    .portfolio-container {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .portfolio-image {
+        width: 15em;
+        border: 2px solid #161831;
+    }
+    .portfolio-description {
+        height: 4em;
+        width: 15em;
+    }
+    .portfolio-description .title {
+        font-size: 0.75em;
+    }
+    .portfolio-description .post {
+        font-size: 0.6em;
+    }
+    #trio-teachers {
+        height: 9em;
+    }
+    #i2TECHS-logo {
+        height: 7em;
+    }
+    #ravikiran-infotech {
+        height: 7em;
+    }
+    #people-skillz {
+        height: 5em;
+    }
+    #nisha-sanjeev {
+        height: 6em;
+    }
+}
+
+@media (max-width: 375px) {
+    .portfolio-image {
+        width: 9.5em;
+        border: 2px solid #161831;
+    }
+    .portfolio-description {
+        height: 5em;
+        width: 9.5em;
+    }
+}

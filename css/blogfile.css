@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f3f5fa;
+    animation: pageLoad 1.25s;
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #161831;
+    z-index: 99999;
+}
+
+.preloader .loader-frame {
+    top: 50%;
+    transform: translate(0, -100%);
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    position: relative;
+}
+
+.preloader .loader-frame .loader1,
+.preloader .loader-frame .loader2 {
+    position: absolute;
+    border: 5px solid transparent;
+    border-radius: 50%;
+}
+
+.preloader .loader-frame .loader1 {
+    width: 70px;
+    height: 70px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    animation: clockwisespin 2s linear 4;
+}
+
+.preloader .loader-frame .loader2 {
+    width: 60px;
+    height: 60px;
+    border-left: 5px solid #35b729;
+    border-right: 5px solid #35b729;
+    top: 5px;
+    left: 5px;
+    animation: anticlockwisespin 2s linear 4;
+}
+
+@keyframes clockwisespin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anticlockwisespin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+#blog {
+    height: 6rem;
+}
+
+.blog {
+    margin: 0 3em;
+}
+
+.blog-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 3rem;
+    margin: 2em 2em;
+}
+
+.blog-content img {
+    height: 20em;
+    width: 30em;
+}
+
+.blog-title {
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    color: #161831;
+}
+
+.blog-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2rem;
+    border-bottom: 4px solid #35b729;
+    left: 50%;
+    top: 107%;
+    transform: translateX(-50%);
+}
+
+.blog-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5rem;
+    border-bottom: 1px solid #dedede;
+    left: 50%;
+    top: 110%;
+    transform: translateX(-50%);
+}
+
+.blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog .container {
+    position: relative;
+    width: 1100px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.blog .container .hide {
+    display: none;
+}
+
+.blog .container .close {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+}
+
+.blog .container .close button {
+    font-size: larger;
+}
+
+.blog .container #pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 80%;
+    height: 80%;
+}
+
+.blog .container .blog-card {
+    max-width: 300px;
+    position: relative;
+    height: 150px;
+    background-color: rgb(252, 250, 250);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    transition: all 1s linear;
+}
+
+.blog .container .blog-card:hover {
+    height: 420px;
+    box-shadow: 0 4px 8px rgba(197, 188, 188, 0.5);
+    cursor: url(Hover-32.cur), auto;
+}
+
+.blog .container .blog-card .imgBx {
+    position: relative;
+    width: 260px;
+    height: 150px;
+    top: -60px;
+    left: 3px;
+    z-index: 1;
+    color: rgb(241, 239, 239);
+}
+
+.blog .container .blog-card .imgBx img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.blog .container .blog-card .imgBx .date {
+    color: #161831;
+    font-family: "Poppins", sans-serif;
+    float: right;
+}
+
+.blog .container .blog-card .content {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #161831;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    font-family: "Poppins", sans-serif;
+}
+
+.content p {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 0.8em;
+}
+
+.content h3 {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.blog .container .blog-card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    cursor: url(Hover-32.cur), auto;
+    transition-delay: 0.1s;
+}
+
+.blog .container .blog-card .content:hover {
+    cursor: url(Hover-32.cur), auto;
+}
+
+.blog .container .blog-card .imgBx .like {
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 10px;
+    top: 4px;
+}
+
+.heart i.fa-heart {
+    color: #f44336;
+}
+
+.glow-on-hover {
+    width: 120px;
+    height: 40px;
+    outline: none;
+    color: #fff;
+    background: #161831;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.glow-on-hover:before {
+    content: "";
+    background: linear-gradient( 45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 300%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #161831;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #161831;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover {
+    cursor: url(Hover-32.cur), auto;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .blog-content {
+        flex-wrap: wrap-reverse;
+    }
+    .blog-content img {
+        height: 15em;
+        width: 20em;
+    }
+}

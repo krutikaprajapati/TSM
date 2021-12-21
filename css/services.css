@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f3f5fa;
+    animation: pageLoad 1.25s;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+#services {
+    height: 6rem;
+}
+
+.services {
+    margin: 0 3em;
+}
+
+.services-title {
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    color: #161831;
+}
+
+.services-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    border-bottom: 4px solid #35b729;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10rem;
+    border-bottom: 1px solid #dedede;
+    left: 50%;
+    top: 104%;
+    transform: translateX(-50%);
+}
+
+
+/* this css is for content after service page title */
+
+.services-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 3rem;
+    margin: 2em 2em;
+}
+
+.services-content img {
+    height: 20em;
+    width: 30em;
+}
+
+
+/* css for main container carries all card */
+
+.service-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* same css for all card */
+
+.card {
+    position: relative;
+    width: 18rem;
+    height: 430px;
+    margin: 10px 10px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5% !important;
+    backdrop-filter: blur(5px);
+    transition: all 1s ease 0s;
+    cursor: url(hover-cursor.svg), auto;
+}
+
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* css for card description*/
+
+.card .card-title {
+    color: #161831;
+    text-align: center;
+    font-weight: 600;
+}
+
+.card .card-text {
+    color: #35b729;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+.card .card-body .card-description {
+    position: absolute;
+    top: 15rem;
+}
+
+
+/* css for card image */
+
+.card .card-body .card-img {
+    height: 10rem;
+    width: 14rem;
+    border: 3px solid black;
+    border-radius: 30px;
+    position: absolute;
+    top: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .services-content {
+        flex-wrap: wrap-reverse;
+    }
+    .services-content img {
+        height: 15em;
+        width: 20em;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-content img {
+        height: 15em;
+        width: 20em;
+    }
+    .card .card-body .card-img {
+        height: 7rem;
+        width: 9.5rem;
+    }
+}
+
+@media (max-width: 280px) {
+    .services-content img {
+        height: 13em;
+        width: 17em;
+    }
+}

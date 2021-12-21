@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>The StartToday Media</title>
+    <link rel="stylesheet" href="css/intro.css" />
+
+    <!-- Logo -->
+    <link rel="icon" href="css/TSM_Logo.svg" />
+</head>
+
+<body>
+    <div class="circle" data-splitting>The-Start-Today-Media-TSMedia-</div>
+    <script src="js/splitting.js"></script>
+    <script>
+        Splitting();
+    </script>
+    <script>
+        var id = setInterval(frame, 64);
+        var loading = 0;
+        // after sometime call to home page
+        function frame() {
+            if (loading == 100) {
+                clearInterval(id);
+                window.open("home.html", "_self");
+            } else {
+                loading = loading + 1;
+                if (loading == 90) {
+                    intro.style.animation = "fadeout 1s ease";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

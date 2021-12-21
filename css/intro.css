@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #161831;
+}
+
+.circle {
+    transform-style: preserve-3d;
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(360deg) rotateX(15deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(15deg);
+    }
+}
+
+.circle .char {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #35b729;
+    color: #fff;
+    font-size: 4em;
+    padding: 5px 12px;
+    border-top: 12px solid #fff;
+    border-bottom: 12px solid #fff;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--char-index) * 12deg)) translateZ(250px);
+    text-shadow: 500px 150px 0 rgba(255, 255, 255, 0.5), 300px 150px 0 rgba(255, 255, 255, 0.5), 150px 600px 0 rgba(255, 255, 255, 0.5), 600px 50px 0 rgba(255, 255, 255, 0.5), 400px 350px 0 rgba(255, 255, 255, 0.5), 200px 500px 0 rgba(255, 255, 255, 0.5), 500px -150px 0 rgba(255, 255, 255, 0.5), 300px -150px 0 rgba(255, 255, 255, 0.5), 150px -600px 0 rgba(255, 255, 255, 0.5), 600px -50px 0 rgba(255, 255, 255, 0.5), 400px -350px 0 rgba(255, 255, 255, 0.5), 200px -500px 0 rgba(255, 255, 255, 0.5);
+}
